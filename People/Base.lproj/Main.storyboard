@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="People" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,199 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IeH-nl-48a">
+                                <rect key="frame" x="0.0" y="349" width="375" height="5"/>
+                                <color key="backgroundColor" red="0.17582939426142857" green="0.32471496407142858" blue="0.50385865287142861" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Iae-Qa-XPy"/>
+                                    <constraint firstAttribute="height" constant="5" id="WNq-SG-bNx"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A50-OR-H3q">
+                                <rect key="frame" x="0.0" y="44" width="375" height="305"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="305" id="3mV-2m-hIq"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personCell" id="aXr-O9-v5E" customClass="PersonTableViewCell" customModule="People" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aXr-O9-v5E" id="pLY-7Y-CoX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ID: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CI-hh-0gy">
+                                                    <rect key="frame" x="3" y="11" width="41" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="41" id="zfr-HW-I1b"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fav City" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAx-Ja-W8F">
+                                                    <rect key="frame" x="231" y="11" width="136" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="136" id="bcF-3j-GBZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMm-Zr-z55">
+                                                    <rect key="frame" x="106" y="11" width="117" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="117" id="vsp-XH-alX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QAx-Ja-W8F" secondAttribute="bottom" constant="3" id="Bob-44-KD6"/>
+                                                <constraint firstItem="2CI-hh-0gy" firstAttribute="top" secondItem="pLY-7Y-CoX" secondAttribute="top" constant="11" id="HK0-9T-RMy"/>
+                                                <constraint firstItem="QAx-Ja-W8F" firstAttribute="trailing" secondItem="pLY-7Y-CoX" secondAttribute="trailingMargin" id="Okf-zy-U1T"/>
+                                                <constraint firstItem="cMm-Zr-z55" firstAttribute="leading" secondItem="2CI-hh-0gy" secondAttribute="trailing" constant="62" id="aof-mc-RNN"/>
+                                                <constraint firstItem="QAx-Ja-W8F" firstAttribute="top" secondItem="pLY-7Y-CoX" secondAttribute="topMargin" constant="3" id="c4U-v6-Gp0"/>
+                                                <constraint firstItem="cMm-Zr-z55" firstAttribute="top" secondItem="pLY-7Y-CoX" secondAttribute="top" constant="11" id="cg1-Zx-83o"/>
+                                                <constraint firstAttribute="bottom" secondItem="2CI-hh-0gy" secondAttribute="bottom" constant="11" id="i8b-2I-DH4"/>
+                                                <constraint firstAttribute="bottom" secondItem="cMm-Zr-z55" secondAttribute="bottom" constant="11" id="n0h-zD-RGw"/>
+                                                <constraint firstItem="2CI-hh-0gy" firstAttribute="leading" secondItem="pLY-7Y-CoX" secondAttribute="leading" constant="3" id="shZ-zo-OtT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="personFavCityLabel" destination="QAx-Ja-W8F" id="Kat-fX-gMP"/>
+                                            <outlet property="personIDLabel" destination="2CI-hh-0gy" id="2ef-eM-gjb"/>
+                                            <outlet property="personNameLabel" destination="cMm-Zr-z55" id="4ig-WX-hUo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="dOZ-Nm-g21"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2iR-Zx-Mvp"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Jb-H6-sZW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="People 🏔" id="0JD-ab-Y78"/>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OrI-mx-5fe">
+                                <rect key="frame" x="0.0" y="354" width="375" height="313"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVq-ec-dnm">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                        <color key="backgroundColor" red="0.52941176470588236" green="0.50980392156862742" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="1. Make a GET request to /people">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getRequestButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cyz-PV-BLV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIm-k3-w5X">
+                                        <rect key="frame" x="0.0" y="45" width="375" height="44"/>
+                                        <color key="backgroundColor" red="0.51764705882352935" green="0.58431372549019611" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="2. Make a POST request to /people">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="postRequestButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KNB-eV-EDU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vl-U8-HzH">
+                                        <rect key="frame" x="0.0" y="89" width="375" height="45"/>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.80000000000000004" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="3. Make a GET request to get the new person">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getNewPersonRequestButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ue-dO-hnJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSv-st-kbm">
+                                        <rect key="frame" x="0.0" y="134" width="375" height="45"/>
+                                        <color key="backgroundColor" red="0.92156862745098034" green="0.80784313725490198" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="4. Make a PUT request to /people/1 and update their city">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="putRequestButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vV7-At-hqc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFC-rd-wzl">
+                                        <rect key="frame" x="0.0" y="179" width="375" height="45"/>
+                                        <color key="backgroundColor" red="0.97647058823529409" green="0.70980392156862748" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="5. Make a GET request to /people/1">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getRequestForFirstPersonButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m1o-Yy-Zs4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eb-Zw-yfN">
+                                        <rect key="frame" x="0.0" y="224" width="375" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.46264990371148462" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="6. Make a DELETE request to /people/1">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteRequestButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yS0-wO-xNS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idk-eX-2e3">
+                                        <rect key="frame" x="0.0" y="268" width="375" height="45"/>
+                                        <color key="backgroundColor" red="1" green="0.25143338585434177" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="7. Make a GET request to /people">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="secondGetRequestButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zTY-Te-alA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SwO-Hs-xxt">
+                                <rect key="frame" x="177" y="47" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Jb-H6-sZW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0NO-og-2Ws"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IeH-nl-48a" secondAttribute="trailing" constant="-16" id="GdZ-Sm-0XR"/>
+                            <constraint firstItem="A50-OR-H3q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Khm-Jm-6B6"/>
+                            <constraint firstItem="A50-OR-H3q" firstAttribute="top" secondItem="3Jb-H6-sZW" secondAttribute="bottom" id="KqM-e0-phE"/>
+                            <constraint firstAttribute="trailing" secondItem="A50-OR-H3q" secondAttribute="trailing" id="LLc-A2-AzW"/>
+                            <constraint firstItem="OrI-mx-5fe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MVy-Gh-4eJ"/>
+                            <constraint firstItem="OrI-mx-5fe" firstAttribute="top" secondItem="IeH-nl-48a" secondAttribute="bottom" id="Sen-Ox-w8I"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OrI-mx-5fe" secondAttribute="bottom" id="YQo-LA-9OU"/>
+                            <constraint firstItem="A50-OR-H3q" firstAttribute="top" secondItem="3Jb-H6-sZW" secondAttribute="bottom" id="gfI-gn-ZNx"/>
+                            <constraint firstItem="IeH-nl-48a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="18" id="huG-pu-MWV"/>
+                            <constraint firstAttribute="trailing" secondItem="3Jb-H6-sZW" secondAttribute="trailing" id="ixS-2u-n1K"/>
+                            <constraint firstItem="3Jb-H6-sZW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ogx-dg-qQE"/>
+                            <constraint firstAttribute="trailing" secondItem="OrI-mx-5fe" secondAttribute="trailing" id="qIq-KB-Pk6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="SwO-Hs-xxt" id="lcF-da-cie"/>
+                        <outlet property="tableView" destination="A50-OR-H3q" id="jYe-co-n23"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="112.89355322338831"/>
         </scene>
     </scenes>
 </document>

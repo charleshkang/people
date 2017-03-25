@@ -9,14 +9,14 @@
 import Foundation
 
 struct Person {
-    let name: String
-    let favoriteCity: String
-    let id: Int?
+    let name: String!
+    let favoriteCity: String!
+    let id: Int!
     
     // MARK: Lifecycle
     init(name: String,
          favoriteCity: String,
-         id: Int?) {
+         id: Int) {
         self.name = name
         self.favoriteCity = favoriteCity
         self.id = id

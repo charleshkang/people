@@ -10,4 +10,5 @@ import Foundation
 
 public enum Constant {
     static let baseURL = "https://tranquil-reaches-12964.herokuapp.com/people"
+    static let personCell = "personCell"
 }

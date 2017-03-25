@@ -18,9 +18,7 @@ class PersonParser {
             let name = result["name"].stringValue
             let favoriteCity = result["favoriteCity"].stringValue
             let id = result["id"].intValue
-            print(name)
-            print(favoriteCity)
-            print(id)
+            
             return Person(name: name, favoriteCity: favoriteCity, id: id)
         }
     }
