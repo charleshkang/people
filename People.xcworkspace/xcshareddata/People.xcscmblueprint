@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "728D772BDF23BB1B4A8504A4461006EC2701C7D0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C704373BF60BFD4B77DE70336D25E275F2780993" : 9223372036854775807,
+    "728D772BDF23BB1B4A8504A4461006EC2701C7D0" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6710CBA0-3F3B-4FEF-A386-BDC226ABFAE2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C704373BF60BFD4B77DE70336D25E275F2780993" : "",
+    "728D772BDF23BB1B4A8504A4461006EC2701C7D0" : "People\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "People",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "People.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/charleshkang\/people.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "728D772BDF23BB1B4A8504A4461006EC2701C7D0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/charleshkang\/ttp-people.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C704373BF60BFD4B77DE70336D25E275F2780993"
+    }
+  ]
+}

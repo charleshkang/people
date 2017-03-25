@@ -53,7 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     @IBAction func secondGetRequestButtonTapped(_ sender: Any) {
-        //TODO: make GET request to /people
+        getPeople()
     }
     
     // Functions
@@ -74,7 +74,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     private func postPerson() {
-        
+    
     }
     
     

@@ -49,8 +49,8 @@ class PersonRequester {
                 main { completion?(.Success(people)) }
             })
         }
-        
     }
+    
     func post(person: Person, completion: @escaping (DataResponse<Any>) -> Void) {
         let newPersonParams: [String: AnyObject] = [
             "name": person.name as AnyObject,
