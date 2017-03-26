@@ -16,9 +16,9 @@ class PersonTableViewCell: UITableViewCell {
     
     // MARK: Actions
     func configure(with person: Person) {
-        personIDLabel.text = "ID: \(String(person.id))"
-        personNameLabel.text = "Name: \(person.name!)"
-        personFavCityLabel.text = "Fav City: \(person.favoriteCity!)"
+        personIDLabel.text = "ID: \(String(describing: person.id!))"
+        personNameLabel.text = "Name: \(person.name)"
+        personFavCityLabel.text = "Fav City: \(person.favoriteCity)"
     }
 
 }

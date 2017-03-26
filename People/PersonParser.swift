@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class PersonParser {
     
-    func parsePersonJSON(json: JSON) -> [Person] {
+    func parsePeopleJSON(json: JSON) -> [Person] {
         let allPeople = json
         
         return allPeople.flatMap { (_, result)  in
@@ -22,5 +22,10 @@ class PersonParser {
             return Person(name: name, favoriteCity: favoriteCity, id: id)
         }
     }
+//    func parsePersonJSON(json: JSON) -> Person {
+//        let person = json
+//        
+//        
+//    }
     
 }

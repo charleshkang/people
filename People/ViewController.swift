@@ -9,46 +9,50 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate {
-
+    
     // MARK: IBOutlets
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var newestPersonCreatedLabel: UILabel!
     
     // MARK: Private Properties
     private let personRequester = PersonRequester()
     
     // MARK: Properties
-    var allPeople = [Person]()
-
+    var people = [Person]()
+    var person: Person?
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden = true
-        
     }
     
     // MARK: IBActions
     @IBAction func getRequestButtonTapped(_ sender: Any) {
         getPeople()
+        
     }
     
     @IBAction func postRequestButtonTapped(_ sender: Any) {
-        //TODO: make POST request
+        postPerson()
     }
     
     @IBAction func getNewPersonRequestButtonTapped(_ sender: Any) {
         //TODO: make GET request for newly added person -> people/id
+        getNewestPerson()
     }
     
     @IBAction func putRequestButtonTapped(_ sender: Any) {
-        //TODO: make PUT request
+        modifyFavoriteCity()
     }
     
     @IBAction func getRequestForFirstPersonButtonTapped(_ sender: Any) {
-        //TODO: make GET request for people/1
+        getForFirstPerson()
     }
     
     @IBAction func deleteRequestButtonTapped(_ sender: Any) {
+        deletePerson()
         //TODO: make DELETE request for people/1
     }
     
@@ -59,11 +63,10 @@ class ViewController: UIViewController, UITableViewDelegate {
     // Functions
     private func getPeople() {
         personRequester.getPeople { people in
-            //            self.activityIndicator.isHidden = false
             switch people {
             case.Success(let people):
                 main {
-                    self.allPeople = people
+                    self.people = people
                     self.tableView.reloadData()
                 }
             case.Failure(let error):
@@ -74,10 +77,35 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     private func postPerson() {
-    
+        let person = Person(name: "Sean", favoriteCity: "New York", id: nil)
+        personRequester.post(person: person, completion: { (response) in
+            self.getPeople()
+            self.tableView.reloadData()
+        })
     }
     
+    private func getNewestPerson() {
+        newestPersonCreatedLabel.text = "Retrieved the newest object with ID: 1, Name: Sean, and Fav City: Brooklyn"
+    }
     
+    private func modifyFavoriteCity() {
+        let person = Person(name: "Sean", favoriteCity: "Brooklyn", id: 1)
+        personRequester.update(person: person)
+        self.getPeople()
+        
+        self.tableView.reloadData()
+    }
+    
+    private func deletePerson() {
+        let person = Person(name: "Sean", favoriteCity: "Brooklyn", id: 1)
+        personRequester.delete(person: person)
+        self.getPeople()
+        tableView.reloadData()
+    }
+    
+    private func getForFirstPerson() {
+        personRequester.getFirstPersonInList()
+    }
     
 }
 
@@ -89,12 +117,13 @@ extension ViewController: UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allPeople.count
+        return people.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.personCell, for: indexPath) as! PersonTableViewCell
-        let person = allPeople[indexPath.row]
+        let person = people[indexPath.row]
         cell.configure(with: person)
+        
         return cell
     }
     

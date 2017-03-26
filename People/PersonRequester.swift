@@ -45,11 +45,23 @@ class PersonRequester {
                     return
                 }
                 let json = JSON(data: jsonData)
-                let people = self.personParser.parsePersonJSON(json: json)
+                let people = self.personParser.parsePeopleJSON(json: json)
                 main { completion?(.Success(people)) }
             })
         }
     }
+    
+//        func getPerson(`for` completion: ((Result<Person>) -> Void)?) {
+//            Alamofire.request(Constant.baseURLWithFirstPerson, method: .get
+//                , parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
+//                    guard let jsonData = response.data else {
+//                        main { completion?(.Failure(.UnexpectedError)) }
+//                        return
+//                    }
+//                    let json = JSON(data: jsonData)
+//                    let people = self.personParser.parsePeopleJSON(json: json)
+//            })
+//        }
     
     func post(person: Person, completion: @escaping (DataResponse<Any>) -> Void) {
         let newPersonParams: [String: AnyObject] = [
@@ -59,13 +71,13 @@ class PersonRequester {
         Alamofire.request(Constant.baseURL, method: .post, parameters: newPersonParams, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: completion)
     }
     
-    func update(with person: Person) {
+    func update(person: Person) {
         let params: [String: AnyObject] = [
             "name": person.name as AnyObject,
             "favoriteCity": person.favoriteCity as AnyObject
         ]
         if let id = person.id {
-            Alamofire.request("\(Constant.baseURL)\(id)", method: .put, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            Alamofire.request(Constant.baseURLWithFirstPerson, method: .put, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
                 if let error = response.result.error {
                     Alert.error(message: "\(error)", title: "Error")
                 }
@@ -73,6 +85,14 @@ class PersonRequester {
         }
     }
     
+    func getFirstPersonInList() {
+        Alamofire.request(Constant.baseURLWithFirstPerson, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let error = response.result.error {
+                Alert.error(message: "\(error)", title: "Error")
+            }
+        }
+    }
+
     func delete(person: Person) {
         if let id = person.id {
             Alamofire.request("\(Constant.baseURL)\(id)", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
