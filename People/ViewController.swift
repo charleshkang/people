@@ -85,7 +85,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     private func getNewestPerson() {
-        newestPersonCreatedLabel.text = "Retrieved the newest object with ID: 1, Name: Sean, and Fav City: Brooklyn"
+        newestPersonCreatedLabel.text = "Retrieved the newest object with ID: 1, Name: Sean, and Fav City: New York"
     }
     
     private func modifyFavoriteCity() {
